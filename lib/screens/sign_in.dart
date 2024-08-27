@@ -1,0 +1,302 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  String email = '';
+  bool showPassword = true;
+  bool isCheck = false;
+  final _formKey = GlobalKey<FormState>();
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 75),
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              children: [
+               // Row(
+               //    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               //    children: [
+               //     Column(
+               //          mainAxisAlignment: MainAxisAlignment.center,
+               //          children: <Widget>[
+               //            Image.asset('assets/images/pana.png', height: 5,width: 20,),
+               //
+               //            SizedBox(height: 120),
+               //          ]
+               //      ),
+                    Text(
+                      'Sign in',
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                 
+               //  ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Text(
+                  'Email',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12),
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                TextFormField(
+                  controller: emailController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'حقل البريد الالكتروني مطلوب';
+                    }
+                    return null;
+                  },
+                  onChanged: (value) {
+                    email = value;
+                    print(value);
+                  },
+                  style: const TextStyle(
+                    color: Colors.red,
+                    fontSize: 16,
+                  ),
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(
+                          color: Colors.grey,
+                        )),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(
+                          color: Colors.black,
+                        )),
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(
+                  height: 23,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Password',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          showPassword = !showPassword;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Icon(
+                            showPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.grey,
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            showPassword ? 'Show' : 'Hide',
+                            style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 13),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                TextFormField(
+                  controller: passwordController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'كلمة السر مطلوبة';
+                    }
+
+                    return null;
+                  },
+                  onChanged: (value) {
+                    email = value;
+                    print(value);
+                  },
+                  obscureText: showPassword,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 11,
+                  ),
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(
+                          color: Colors.grey,
+                        )),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(
+                          color: Colors.grey,
+                        )),
+                  ),
+                  keyboardType: TextInputType.visiblePassword,
+                  maxLength: 8,
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Row(
+                  children: [
+                    Checkbox(
+                      checkColor: Colors.white,activeColor: Colors.red,
+                      value: isCheck,
+                      onChanged: (value) {
+                        setState(() {
+                          isCheck = value!;
+                        });
+                      },
+                    ),
+                    const Text(
+                      'Rememeber me',
+                      style: TextStyle(fontSize: 10, color: Colors.black),
+                    ),
+                    SizedBox(
+                      width: 70,
+                    ),
+                    const Text(
+                      'Forgot password?',
+                      style: TextStyle(fontSize: 10, color: Colors.black),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+
+                Padding(
+                  padding: const EdgeInsets.all(9.0),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red[700],
+                      padding: EdgeInsets.symmetric(vertical: 12.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                    ),
+                    onPressed: () {
+                      // Handle sign in action
+                    },
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
+                    ),
+
+                  ),
+                ),
+                 Row(
+                     children: [
+                       Center(
+                         child: Text(
+                           ' Don’t have an account?',
+                           style: TextStyle(fontSize: 12, color: Colors.black),
+                         ),
+                       ),
+                       SizedBox(
+                         width: 5,
+                       ),
+                       Text(
+                         'Sign up',
+                         style: TextStyle(fontSize: 12, color: Colors.red),
+                       ),
+                     ],
+                  ),
+                const SizedBox(height: 59),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        height: 6,
+                        color:Colors.black,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Text(
+                      'Or login with',
+                      style: TextStyle(fontSize: 12, color: Colors.black,fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Expanded(
+                      child: Divider(
+                        color: Colors.black,
+                        height: 6,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 18),
+          Padding(
+          padding: const EdgeInsets.all(9.0),
+          child: Container(
+          decoration: BoxDecoration(
+          image: DecorationImage(
+          image: AssetImage('assets/images/img.png'),
+          fit: BoxFit.cover,
+          ),
+          borderRadius: BorderRadius.circular(15.0),
+          ),
+          child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: 12.0),
+          shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+          ),
+          ),
+          onPressed: () {
+          // Handle button action
+          },
+          child: Text('Click Me'), // Button text
+          ),
+          ),
+          ),
+            ],
+    ),
+    ),
+      ),
+    ),
+          );
+          }
+          }
+
