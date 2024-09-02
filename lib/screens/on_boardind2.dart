@@ -6,18 +6,22 @@ class OnBoarding2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        child: Padding(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Image.asset('assets/images/LOGO.png'),
               const SizedBox(height: 20),
-              Align(alignment: Alignment.center,
-                  child: Image.asset('assets/images/Frame_2.png',height:327 ,width: 342, )),
+              Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'assets/images/Frame_2.png',
+                    height: 327,
+                    width: 342,
+                  )),
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(
@@ -51,7 +55,8 @@ class OnBoarding2 extends StatelessWidget {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
-                    padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 120.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 17.0, horizontal: 120.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -71,7 +76,6 @@ class OnBoarding2 extends StatelessWidget {
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-
                   // Define skip action
                 },
                 child: Text(
@@ -84,9 +88,6 @@ class OnBoarding2 extends StatelessWidget {
           ),
         ),
       ),
-        ),
     );
   }
 }
-
-

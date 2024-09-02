@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:homework/screens/api_data.dart';
-import 'package:homework/screens/chicken%20burger.dart';
+import 'package:homework/screens/chicken_burger.dart';
 import 'package:homework/screens/fovrite_page.dart';
 import 'package:homework/screens/home2.dart';
 
@@ -14,14 +13,11 @@ class BaseScreen extends StatefulWidget {
 
 class _BaseScreenState extends State<BaseScreen> {
   int selectIndex = 0;
-  List screen =[
+  List screen = [
     const Home2(),
-    FavouritePage(),
+    const FavouritePage(),
     const ChickenBurger(),
     const Dataapi(),
-
-
-
   ];
   @override
   Widget build(BuildContext context) {

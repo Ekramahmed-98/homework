@@ -1,13 +1,12 @@
-
 class Food {
-  int? id ;
+  int? id;
   String? name;
   double? price;
   String? image;
-  double? rate ;
+  double? rate;
 
   Food({
-    required this.id ,
+    required this.id,
     required this.name,
     required this.price,
     required this.image,
@@ -20,7 +19,6 @@ class Food {
     price = double.parse(json['price'].toString());
     image = json['image'];
     rate = double.parse(json['rate'].toString());
-
   }
 
   Map<String, dynamic> toJson() {
@@ -32,8 +30,8 @@ class Food {
     data['image'] = image;
     return data;
   }
-
 }
+
 List<Food> foodData = [
   Food(
     id: 0,
@@ -41,11 +39,5 @@ List<Food> foodData = [
     name: 'saled',
     price: 155,
     rate: 5.2,
-
   )
 ];
-
-
-
-
-

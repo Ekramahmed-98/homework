@@ -12,32 +12,23 @@ import 'package:homework/screens/homee.dart';
 import 'package:homework/screens/sign_up.dart';
 
 void main() async {
-// WidgetsFlutterBinding.ensureInitialized();
-// WidgetsBinding.instance;
-// await Firebase.initializeApp();
-
-  runApp(   MaterialApp(
-      title: 'Food App',
-      debugShowCheckedModeBanner: false,
-
-      // home: Profile(),
-
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const SplashScreen(),
-        '/Onboarding1': (context) =>  Onboarding1(),
-        '/Onboarding2': (context) => const OnBoarding2(),
-        '/Onboarding3': (context) => const OnBoarding3(),
-        'HomeScreen': (context) => const HomeeScreen(),
-        'Home2': (context) => const Home2(),
-        'SignInScreen': (context) => const SignInScreen(),
-        'SignUp': (context) => SignUp(),
-        'Profile': (context) => Profile(),
-        'Favourite': (context) => FavouritePage(),
-        'BaseScreen': (context) => const BaseScreen(),
-      }
-  ),
-    );
-  }
-
-
+  runApp(
+    MaterialApp(
+        title: 'Food App',
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const SplashScreen(),
+          '/Onboarding1': (context) => const Onboarding1(),
+          '/Onboarding2': (context) => const OnBoarding2(),
+          '/Onboarding3': (context) => const OnBoarding3(),
+          'HomeScreen': (context) => const HomeeScreen(),
+          'Home2': (context) => const Home2(),
+          'SignInScreen': (context) => const SignInScreen(),
+          'SignUp': (context) => const SignUp(),
+          'Profile': (context) => const Profile(),
+          'Favourite': (context) => const FavouritePage(),
+          'BaseScreen': (context) => const BaseScreen(),
+        }),
+  );
+}

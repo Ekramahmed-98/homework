@@ -1,20 +1,14 @@
-
 import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:homework/model/food_model.dart';
 import '../controller/Database/database.dart';
 
-
-
-
-
 class AddDataDatabase extends StatefulWidget {
   const AddDataDatabase({super.key});
 
   @override
-  State<AddDataDatabase> createState() =>
-      _AddDataDatabaseState();
+  State<AddDataDatabase> createState() => _AddDataDatabaseState();
 }
 
 class _AddDataDatabaseState extends State<AddDataDatabase> {
@@ -80,12 +74,11 @@ class _AddDataDatabaseState extends State<AddDataDatabase> {
             ElevatedButton(
               onPressed: () async {
                 final food = Food(
-                  id: 0,
-                  name: titleController.text,
-                  image: 'assets/images/Ellipse 20 (5).png',
-                  price: double.parse(priceController.text),
-                  rate: double.parse(rateController.text)
-                );
+                    id: 0,
+                    name: titleController.text,
+                    image: 'assets/images/Ellipse 20 (5).png',
+                    price: double.parse(priceController.text),
+                    rate: double.parse(rateController.text));
                 await Database.insertFood(food);
                 dev.log('save on database');
                 setState(() {});
@@ -125,7 +118,8 @@ class _AddDataDatabaseState extends State<AddDataDatabase> {
                           onTap: () async {
                             await Database.deleteFoodById(data['id']);
                             ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('تم الحذف بنجاح')));
+                                const SnackBar(
+                                    content: Text('تم الحذف بنجاح')));
                             setState(() {});
                           },
                         );
@@ -141,5 +135,3 @@ class _AddDataDatabaseState extends State<AddDataDatabase> {
     );
   }
 }
-
-

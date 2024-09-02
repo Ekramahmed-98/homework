@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:homework/controller/Api/food_api_controller_http.dart';
 import 'package:homework/model/food_model.dart';
 
-
 class Dataapi extends StatefulWidget {
   const Dataapi({super.key});
 
@@ -14,7 +13,7 @@ class _DataapiState extends State<Dataapi> {
   FoodApiControllerHttp foodApiControllerHttp = FoodApiControllerHttp();
   TextEditingController titleController = TextEditingController();
   TextEditingController priceController = TextEditingController();
-  TextEditingController rateController =TextEditingController();
+  TextEditingController rateController = TextEditingController();
 
   FoodApiControllerHttp? _finalProjectHttp;
   bool checkPost = false;
@@ -100,10 +99,8 @@ class _DataapiState extends State<Dataapi> {
                             name: titleController.text,
                             price: double.parse(priceController.text),
                             rate: double.parse(rateController.text),
-                            image: 'assets/images/sandwich.png'
-
-                        );
-                        foodApiControllerHttp.putFood(foods , data.id!);
+                            image: 'assets/images/sandwich.png');
+                        foodApiControllerHttp.putFood(foods, data.id!);
                         titleController.clear();
                         priceController.clear();
                         rateController.clear();
@@ -121,7 +118,6 @@ class _DataapiState extends State<Dataapi> {
                         Text(data.rate.toString()),
                       ],
                     ),
-
                   ),
                 );
               },
@@ -135,9 +131,13 @@ class _DataapiState extends State<Dataapi> {
               title: 'add',
               titleButton: 'add user',
               onPressed: () async {
-                if (titleController.text.isNotEmpty && priceController.text.isNotEmpty && rateController.text.isNotEmpty ) {
+                if (titleController.text.isNotEmpty &&
+                    priceController.text.isNotEmpty &&
+                    rateController.text.isNotEmpty) {
                   await foodApiControllerHttp.postFood(
-                      titleController.text, double.parse(priceController.text), double.parse(rateController.text));
+                      titleController.text,
+                      double.parse(priceController.text),
+                      double.parse(rateController.text));
                   titleController.clear();
                   priceController.clear();
                   rateController.clear();
@@ -157,91 +157,88 @@ class _DataapiState extends State<Dataapi> {
 
   customShowDailog(
       {required String titleButton,
-        required String title,
-        required VoidCallback onPressed}) {
+      required String title,
+      required VoidCallback onPressed}) {
     showDialog(
       context: context,
-      builder: (context) =>
-          AlertDialog(
-            backgroundColor: Colors.white,
-            title: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Add User'),
-              ],
-            ),
-            actions: [
-              const SizedBox(
-                height: 25,
-              ),
-              TextFormField(
-                  controller: titleController,
-                  keyboardType: TextInputType.text,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                      labelText: 'title',
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0))),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'يجب ادخال البيانات';
-                    }
-                    return null;
-                  }),
-              const SizedBox(
-                height: 15,
-              ),
-              TextFormField(
-                  controller: priceController,
-                  keyboardType: TextInputType.number,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: 'price',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0)),
-                  ),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'يجب ادخال السعر';
-                    }
-                    return null;
-                  }),
-              const SizedBox(
-                height: 25,
-              ),
-
-              TextFormField(
-                  controller: rateController,
-                  keyboardType: TextInputType.number,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: 'rate',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0)),
-                  ),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'يجب ادخال البيانات';
-                    }
-                    return null;
-                  }),
-              const SizedBox(
-                height: 25,
-              ),
-              Center(
-                  child: ElevatedButton(
-                      style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.black12),
-                      onPressed: onPressed,
-                      child: Text(
-                        titleButton,
-                        style: const TextStyle(color: Colors.white),
-                      ))),
-              checkPost != false
-                  ? const CircularProgressIndicator()
-                  : Container(),
-            ]
+      builder: (context) => AlertDialog(
+          backgroundColor: Colors.white,
+          title: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Add User'),
+            ],
           ),
-         );
-      }
-    }
+          actions: [
+            const SizedBox(
+              height: 25,
+            ),
+            TextFormField(
+                controller: titleController,
+                keyboardType: TextInputType.text,
+                obscureText: false,
+                decoration: InputDecoration(
+                    labelText: 'title',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0))),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'يجب ادخال البيانات';
+                  }
+                  return null;
+                }),
+            const SizedBox(
+              height: 15,
+            ),
+            TextFormField(
+                controller: priceController,
+                keyboardType: TextInputType.number,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'price',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0)),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'يجب ادخال السعر';
+                  }
+                  return null;
+                }),
+            const SizedBox(
+              height: 25,
+            ),
+            TextFormField(
+                controller: rateController,
+                keyboardType: TextInputType.number,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'rate',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0)),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'يجب ادخال البيانات';
+                  }
+                  return null;
+                }),
+            const SizedBox(
+              height: 25,
+            ),
+            Center(
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black12),
+                    onPressed: onPressed,
+                    child: Text(
+                      titleButton,
+                      style: const TextStyle(color: Colors.white),
+                    ))),
+            checkPost != false
+                ? const CircularProgressIndicator()
+                : Container(),
+          ]),
+    );
+  }
+}

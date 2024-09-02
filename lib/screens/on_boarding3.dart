@@ -8,8 +8,7 @@ class OnBoarding3 extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Container(
-          child: Column(
+        body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const SizedBox(
@@ -17,15 +16,14 @@ class OnBoarding3 extends StatelessWidget {
               ),
               Image.asset('assets/images/LOGO.png'),
               const SizedBox(height: 40),
-
               Stack(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Align(alignment: Alignment.center,
+                    child: Align(
+                        alignment: Alignment.center,
                         child: Image.asset('assets/images/cuate.png')),
                   ),
-
                 ],
               ),
               const SizedBox(height: 20),
@@ -47,7 +45,6 @@ class OnBoarding3 extends StatelessWidget {
                   color: Colors.grey[600],
                 ),
               ),
-
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -57,17 +54,18 @@ class OnBoarding3 extends StatelessWidget {
                   Image.asset('assets/images/Ellipse 1.png'),
                   const SizedBox(width: 4),
                   Image.asset('assets/images/Rectangle 1.png'),
-
-
-
-                ],),
-              const SizedBox(height: 50,),
+                ],
+              ),
+              const SizedBox(
+                height: 50,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red[700],
-                    padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 120.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 17.0, horizontal: 120.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -84,9 +82,7 @@ class OnBoarding3 extends StatelessWidget {
                   ),
                 ),
               ),
-             ]
-          ),
-        ),
+            ]),
       ),
     );
   }
