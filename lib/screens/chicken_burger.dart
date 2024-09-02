@@ -20,7 +20,7 @@ class _ChickenBurgerState extends State<ChickenBurger> {
         children: [
           Center(
             child: Image.asset(
-              'assets/images/Rectangle 574.png',
+              'assets/images/Rectangle 1.png',
               height: 300,
             ),
           ),
