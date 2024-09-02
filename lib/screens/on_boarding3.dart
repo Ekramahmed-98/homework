@@ -12,11 +12,11 @@ class OnBoarding3 extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               Image.asset('assets/images/LOGO.png'),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
 
               Stack(
                 children: [
@@ -28,8 +28,8 @@ class OnBoarding3 extends StatelessWidget {
 
                 ],
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 "Deliver to your home",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -38,7 +38,7 @@ class OnBoarding3 extends StatelessWidget {
                   color: Colors.red,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 "Enjoy a fast and smooth delivery at your doorstep",
                 textAlign: TextAlign.center,
@@ -48,26 +48,26 @@ class OnBoarding3 extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset('assets/images/Ellipse 1.png'),
-                  SizedBox(width: 4),
+                  const SizedBox(width: 4),
                   Image.asset('assets/images/Ellipse 1.png'),
-                  SizedBox(width: 4),
+                  const SizedBox(width: 4),
                   Image.asset('assets/images/Rectangle 1.png'),
 
 
 
                 ],),
-              SizedBox(height: 50,),
+              const SizedBox(height: 50,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red[700],
-                    padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 120.0),
+                    padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 120.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -75,7 +75,7 @@ class OnBoarding3 extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pushNamed('HomeScreen');
                   },
-                  child: Text(
+                  child: const Text(
                     'Get started ',
                     style: TextStyle(
                       fontSize: 18,

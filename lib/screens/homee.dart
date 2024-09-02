@@ -24,18 +24,18 @@ class HomeeScreen extends StatelessWidget {
                     'assets/images/LOGO.png',width: 60,  // Replace with your logo image path
                     height: 60.0,
                   ),
-                  SizedBox(height: 100),
+                  const SizedBox(height: 100),
                   Image.asset(
                     'assets/images/Restaurant.png',
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 80),
+            const SizedBox(height: 80),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red[700],
-                padding: EdgeInsets.symmetric(vertical: 22.0),
+                padding: const EdgeInsets.symmetric(vertical: 22.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
@@ -43,7 +43,7 @@ class HomeeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushNamed('SignInScreen');
               },
-              child: Text(
+              child: const Text(
                 'Sign in',
                 style: TextStyle(
                   fontSize: 18.0,
@@ -52,13 +52,13 @@ class HomeeScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             OutlinedButton(
               style: OutlinedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical:3.0),
+                padding: const EdgeInsets.symmetric(vertical:3.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
-                    side:  BorderSide(
+                    side:  const BorderSide(
                       color: Colors.red,
                     )
                 ),
@@ -66,8 +66,8 @@ class HomeeScreen extends StatelessWidget {
               onPressed: () {
                 // Handle sign up action
               },
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
+              child: const Padding(
+                padding: EdgeInsets.all(15.0),
                 child: Row(
                   children: [
 
@@ -93,7 +93,7 @@ class HomeeScreen extends StatelessWidget {
 
             ),
 
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
           ],
         ),
       ),

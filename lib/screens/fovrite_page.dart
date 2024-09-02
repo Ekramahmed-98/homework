@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FavouritePage extends StatefulWidget {
+  const FavouritePage({super.key});
+
   @override
   State<FavouritePage> createState() => _FavouritePageState();
 }
@@ -36,12 +38,12 @@ class _FavouritePageState extends State<FavouritePage> {
 
                       },
                       icon: const Icon(Icons.arrow_back_ios)),),
-                Text(
+                const Text(
                   'Your favourites',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 InkWell(
-                  child: Icon(Icons.notifications_outlined,size: 30),
+                  child: const Icon(Icons.notifications_outlined,size: 30),
                   onTap: () {
 
                   },),
@@ -65,18 +67,18 @@ class _FavouritePageState extends State<FavouritePage> {
         padding: const EdgeInsets.only(top: 35.0),
 
         child: Text(
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,fontWeight: FontWeight.bold
           ),
             Favourite[index]["name"]!),
       ),
       subtitle: Text(
-        style: TextStyle(
+        style: const TextStyle(
         fontSize: 15,fontWeight: FontWeight.bold),
           Favourite[index]["price"]!),
 
 
-      trailing: Icon(
+      trailing: const Icon(
       Icons.favorite,
       color: Colors.red,
       ),

@@ -6,7 +6,7 @@ import 'package:homework/constant/bottom.dart';
 class SignUp extends StatefulWidget {
 
 
-   SignUp({super.key});
+   const SignUp({super.key});
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -37,8 +37,8 @@ class _SignUpState extends State<SignUp> {
 
                     Image.asset('assets/images/up.png'),
 
-                    Padding(
-                      padding: const EdgeInsets.only(right: 270),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 270),
                       child: Text('Sign Up',style: TextStyle(
                           color: Colors.red,
                           fontSize: 30,
@@ -139,7 +139,7 @@ class _SignUpState extends State<SignUp> {
                       ],
                     ),
 
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
 
                     // Padding(
                     //   padding: const EdgeInsets.all(9.0),
@@ -172,38 +172,38 @@ class _SignUpState extends State<SignUp> {
                         backgroundColor: Colors.red,
                         textColor: Colors.white),
 
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Already have an account?',style: TextStyle(color: Colors.grey,fontSize: 15,),),
-                        SizedBox(width: 3,),
+                        const Text('Already have an account?',style: TextStyle(color: Colors.grey,fontSize: 15,),),
+                        const SizedBox(width: 3,),
                         InkWell(onTap: () {
 
-                        },child: Text(' Sign in',
+                        },child: const Text(' Sign in',
                           style: TextStyle(color: Colors.red,fontSize: 15,),
                         )),
 
                       ],
                     ),
-                    SizedBox(height: 10,),
-                    Divider(
+                    const SizedBox(height: 10,),
+                    const Divider(
                       height: 10,color: Colors.black,indent: 15,endIndent: 15,
                     ),
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset('assets/images/Facebook.png'),
-                        SizedBox(width:25 ,),
+                        const SizedBox(width:25 ,),
                         InkWell(onTap: () {
 
                         },
                             child: Image.asset('assets/images/Group.png')),
                       ],
                     ),
-                    SizedBox(height: 10,),
-                    Text('By signing up you agree with our T&C and privacy policy'),
+                    const SizedBox(height: 10,),
+                    const Text('By signing up you agree with our T&C and privacy policy'),
                   ],
                 ),
                 ]

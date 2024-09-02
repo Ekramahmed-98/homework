@@ -23,7 +23,7 @@ class _Home2State extends State<Home2> {
                 onPressed: () {
                 },
                 icon: const Icon(Icons.arrow_back_ios)),),
-        Text(
+        const Text(
         'Select a meal type',
         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
 
@@ -35,11 +35,11 @@ class _Home2State extends State<Home2> {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                InkWell(child: Icon(Icons.notifications,size: 28),
+                InkWell(child: const Icon(Icons.notifications,size: 28),
                   onTap: () {
 
                   },),
-                InkWell(child: Icon(Icons.search,size: 28),
+                InkWell(child: const Icon(Icons.search,size: 28),
                   onTap: () {
 
                   },),
@@ -49,7 +49,7 @@ class _Home2State extends State<Home2> {
           )
         ],),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -57,13 +57,13 @@ class _Home2State extends State<Home2> {
             Expanded(
               child: ListView(
                 children: [
-                  SizedBox(height: 13,),
+                  const SizedBox(height: 13,),
                   Image.asset('assets/images/main_dish.png', ),
-                  SizedBox(height: 13,),
+                  const SizedBox(height: 13,),
                   Image.asset('assets/images/FAST FOOD.png', height: 150,),
-                  SizedBox(height: 13,),
+                  const SizedBox(height: 13,),
                   Image.asset('assets/images/salad.png', height: 150,),
-                  SizedBox(height: 13,),
+                  const SizedBox(height: 13,),
                   Image.asset('assets/images/fruit.png', height: 150,),
 
                 ],

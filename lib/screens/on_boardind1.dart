@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 
 class Onboarding1 extends StatelessWidget {
+  const Onboarding1({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -12,11 +14,11 @@ class Onboarding1 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
                     Image.asset('assets/images/LOGO.png'),
-                    SizedBox(height: 40),
+                    const SizedBox(height: 40),
 
             Stack(
               children: [
@@ -46,8 +48,8 @@ class Onboarding1 extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               "Your comfort food lies here",
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -56,7 +58,7 @@ class Onboarding1 extends StatelessWidget {
                 color: Colors.red,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               "Order your favourite meal and taste greatness",
               textAlign: TextAlign.center,
@@ -66,21 +68,21 @@ class Onboarding1 extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset('assets/images/Ellipse 1.png'),
-                SizedBox(width: 4,),
+                const SizedBox(width: 4,),
                 Image.asset('assets/images/Rectangle 1.png'),
               ],),
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red[700],
-                  padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 100.0),
+                  padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 100.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -88,7 +90,7 @@ class Onboarding1 extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/Onboarding2');
                 },
-                child: Text(
+                child: const Text(
                   'Continue',
                   style: TextStyle(
                     fontSize: 18,
@@ -97,7 +99,7 @@ class Onboarding1 extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextButton(
               onPressed: () {
                 // Define skip action
@@ -107,7 +109,7 @@ class Onboarding1 extends StatelessWidget {
                 style: TextStyle(color: Colors.grey[600]),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

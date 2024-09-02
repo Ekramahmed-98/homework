@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class Profile extends StatelessWidget {
+  const Profile({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
 
-        title: Text('Your Profile '),
+        title: const Text('Your Profile '),
       ),
       body: Padding(
         padding: const EdgeInsets.all(2.0),
@@ -33,7 +35,7 @@ class Profile extends StatelessWidget {
               width: 350,
               child: ListView(
 
-                children: [
+                children: const [
                   TextFormField1(text: 'Usrename',),
                   TextFormField1(text: 'First name',),
                   TextFormField1(text: 'Last name',),
@@ -41,7 +43,7 @@ class Profile extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
 
@@ -72,7 +74,7 @@ class TextFormField1 extends StatelessWidget {
           children: [
             Align(alignment: Alignment.centerLeft,
               child: Text(text,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.black,
                     fontSize: 17,
                     fontWeight: FontWeight.bold),),

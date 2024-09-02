@@ -15,7 +15,7 @@ class OnBoarding2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Image.asset('assets/images/LOGO.png'),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Align(alignment: Alignment.center,
                   child: Image.asset('assets/images/Frame_2.png',height:327 ,width: 342, )),
               Expanded(
@@ -26,8 +26,8 @@ class OnBoarding2 extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 "Test fresh delicious meals anytime",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -36,7 +36,7 @@ class OnBoarding2 extends StatelessWidget {
                   color: Colors.red,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 "We provide well prepared meal at all hours of the day",
                 textAlign: TextAlign.center,
@@ -45,13 +45,13 @@ class OnBoarding2 extends StatelessWidget {
                   color: Colors.grey[600],
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
-                    padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 120.0),
+                    padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 120.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -59,7 +59,7 @@ class OnBoarding2 extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/Onboarding3');
                   },
-                  child: Text(
+                  child: const Text(
                     'Continue',
                     style: TextStyle(
                       fontSize: 18,
@@ -68,7 +68,7 @@ class OnBoarding2 extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
 
@@ -79,7 +79,7 @@ class OnBoarding2 extends StatelessWidget {
                   style: TextStyle(color: Colors.grey[600]),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
         ),

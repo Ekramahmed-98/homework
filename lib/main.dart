@@ -1,8 +1,5 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:homework/screens/add_data+to_database.dart';
 import 'package:homework/screens/base.dart';
-import 'package:homework/screens/chicken%20burger.dart';
 import 'package:homework/screens/fovrite_page.dart';
 import 'package:homework/screens/home2.dart';
 import 'package:homework/screens/launch.dart';

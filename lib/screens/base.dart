@@ -28,33 +28,33 @@ class _BaseScreenState extends State<BaseScreen> {
     return Scaffold(
       body: screen[selectIndex],
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          const BottomNavigationBarItem(
+        items: const [
+          BottomNavigationBarItem(
               backgroundColor: Colors.red,
               icon: Icon(
                 Icons.home_filled,
                 color: Colors.white,
               ),
               label: ''),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(
                 Icons.heart_broken,
                 color: Colors.white,
               ),
               label: ''),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(
                 Icons.shopping_cart,
                 color: Colors.white,
               ),
               label: ''),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(
                 Icons.chat,
                 color: Colors.white,
               ),
               label: ''),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_circle,
                 color: Colors.white,

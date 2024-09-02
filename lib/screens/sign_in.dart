@@ -32,7 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
             child: ListView(
               children: [
                           Image.asset('assets/images/in.png'),
-                    Text(
+                    const Text(
                       'Sign in',
                       style: TextStyle(
                         color: Colors.red,
@@ -64,7 +64,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   decoration: InputDecoration(
                     labelText:'email' ,
-                    labelStyle: TextStyle(color: Colors.grey),
+                    labelStyle: const TextStyle(color: Colors.grey),
                     hintText:'email' ,
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -173,7 +173,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       'Rememeber me',
                       style: TextStyle(fontSize: 10, color: Colors.black),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 70,
                     ),
                     const Text(
@@ -188,7 +188,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
-                      padding: EdgeInsets.symmetric(vertical: 12.0),
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
@@ -201,7 +201,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
 
 
-                    child: Text(
+                    child: const Text(
                       'Sign up',
                       style: TextStyle(
                         fontSize: 18.0,
@@ -211,7 +211,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
                   ),
                 ),
-                 Row(
+                 const Row(
                    mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                        Center(
@@ -257,12 +257,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 5,),
+                const SizedBox(height: 5,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset('assets/images/Facebook.png'),
-                    SizedBox(width:25 ,),
+                    const SizedBox(width:25 ,),
                     InkWell(
 
                         onTap: ()  async {

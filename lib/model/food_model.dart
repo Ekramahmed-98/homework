@@ -24,12 +24,12 @@ class Food {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.name;
-    data['price'] = this.price;
-    data['rate'] = this.rate;
-    data['image'] = this.image;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = name;
+    data['price'] = price;
+    data['rate'] = rate;
+    data['image'] = image;
     return data;
   }
 

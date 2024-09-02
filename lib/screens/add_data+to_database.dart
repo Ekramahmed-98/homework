@@ -1,10 +1,8 @@
 
 import 'dart:developer' as dev;
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:homework/model/food_model.dart';
-import 'package:sqflite/sqflite.dart'as sql;
 import '../controller/Database/database.dart';
 
 

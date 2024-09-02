@@ -103,7 +103,7 @@ class _DataapiState extends State<Dataapi> {
                             image: 'assets/images/sandwich.png'
 
                         );
-                        foodApiControllerHttp!.putFood(foods , data.id!);
+                        foodApiControllerHttp.putFood(foods , data.id!);
                         titleController.clear();
                         priceController.clear();
                         rateController.clear();
@@ -136,7 +136,7 @@ class _DataapiState extends State<Dataapi> {
               titleButton: 'add user',
               onPressed: () async {
                 if (titleController.text.isNotEmpty && priceController.text.isNotEmpty && rateController.text.isNotEmpty ) {
-                  await foodApiControllerHttp!.postFood(
+                  await foodApiControllerHttp.postFood(
                       titleController.text, double.parse(priceController.text), double.parse(rateController.text));
                   titleController.clear();
                   priceController.clear();
@@ -150,7 +150,7 @@ class _DataapiState extends State<Dataapi> {
               });
         },
         backgroundColor: Colors.orange,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

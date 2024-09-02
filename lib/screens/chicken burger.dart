@@ -30,7 +30,7 @@ class _ChickenBurgerState extends State<ChickenBurger> {
               ),
 
           ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Row(
@@ -46,7 +46,7 @@ class _ChickenBurgerState extends State<ChickenBurger> {
                       icon: const Icon(Icons.location_on,color: Colors.pink,)),
                 ],
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(bottom: 20),
                 child:
                   Text(
@@ -57,10 +57,10 @@ class _ChickenBurgerState extends State<ChickenBurger> {
                   ),),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                  Icon(
@@ -68,11 +68,11 @@ class _ChickenBurgerState extends State<ChickenBurger> {
                     ]
               ),
 
-              SizedBox(
+              const SizedBox(
                 width: 4,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Text(
@@ -82,10 +82,10 @@ class _ChickenBurgerState extends State<ChickenBurger> {
                   ),),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
               height: 16,
               ),
-              Text(
+              const Text(
                   'Delicious and tasty cheese burger one of tasty town’s finest, '
                       'it has a record sale of 2000 orders and a rating of 4.8 '
                       'since it’s introduction. no dull yourself oh!!',
@@ -94,8 +94,8 @@ class _ChickenBurgerState extends State<ChickenBurger> {
                   color: Colors.grey
                 ),),
 
-              Padding(
-                padding: const EdgeInsets.only(top: 50.0),
+              const Padding(
+                padding: EdgeInsets.only(top: 50.0),
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Text('\$12',

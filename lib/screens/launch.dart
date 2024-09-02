@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
 
       body: Stack(
         children: [
-          Container(
+          SizedBox(
             height: 900,
             width:500 ,
             child: Column(
@@ -28,7 +28,7 @@ class SplashScreen extends StatelessWidget {
               children: [
                 Image.asset('assets/images/LOGO.png'),
 
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
 
                 Text('Tasty Town',
                   style: TextStyle(color :Colors.yellow[300],

@@ -4,7 +4,6 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'package:image_picker/image_picker.dart';
 import '../../constant/api_url.dart';
 import '../../model/food_model.dart';
 
@@ -49,7 +48,7 @@ class FoodApiControllerHttp with ChangeNotifier {
   }
 
   Future<void> postFood(
-      String title, double price, double rate, XFile? selectedImage) async {
+      String title, double price, double rate,) async {
 
 
     try {
