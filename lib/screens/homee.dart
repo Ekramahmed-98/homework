@@ -8,7 +8,8 @@ class HomeeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+        child:Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -16,34 +17,31 @@ class HomeeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Spacer(),
             Center(
               child: Column(
                 children: <Widget>[
                   Image.asset(
-                    'assets/images/LOGO1.png',width: 60,  // Replace with your logo image path
+                    'assets/images/LOGO.png',width: 60,  // Replace with your logo image path
                     height: 60.0,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 100),
                   Image.asset(
                     'assets/images/Restaurant.png',
-                    width: 300,// Replace with your shop image path
-                    height: 200.0,
                   ),
                 ],
               ),
             ),
-            Spacer(),
+            SizedBox(height: 80),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red[700],
-                padding: EdgeInsets.symmetric(vertical: 16.0),
+                padding: EdgeInsets.symmetric(vertical: 22.0),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
               onPressed: () {
-                // Handle sign in action
+                Navigator.of(context).pushNamed('SignInScreen');
               },
               child: Text(
                 'Sign in',
@@ -53,12 +51,13 @@ class HomeeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+
+            SizedBox(height: 30.0),
             OutlinedButton(
               style: OutlinedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 16.0),
+                padding: EdgeInsets.symmetric(vertical:3.0),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(20.0),
                     side:  BorderSide(
                       color: Colors.red,
                     )
@@ -67,18 +66,38 @@ class HomeeScreen extends StatelessWidget {
               onPressed: () {
                 // Handle sign up action
               },
-              child: Text(
-                'Sign up',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.red[700],
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Row(
+                  children: [
+
+                    Text(
+                      'Sign up',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.red,
+                      ),
+                    ),
+                  SizedBox(width: 230,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+
+                        Icon(Icons.arrow_forward, color: Colors.red),
+
+                      ]
+                  ),
+                ]
                 ),
               ),
+
             ),
+
             SizedBox(height: 20.0),
           ],
         ),
       ),
+        ),
     );
   }
 }

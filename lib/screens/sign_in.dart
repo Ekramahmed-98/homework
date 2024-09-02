@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../controller/firebase/auth_user_email.dart';
+import '../controller/firebase/google_firebase.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -10,12 +12,15 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
 
+  AuthUserFirebaseController firebaseSign=AuthUserFirebaseController();
+  FirebaseGoogle firebaseGoogle=FirebaseGoogle();
+
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   String email = '';
   bool showPassword = true;
   bool isCheck = false;
-  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,43 +29,23 @@ class _SignInScreenState extends State<SignInScreen> {
         body: Padding(
           padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 75),
           child: Form(
-            key: _formKey,
             child: ListView(
               children: [
-               // Row(
-               //    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               //    children: [
-               //     Column(
-               //          mainAxisAlignment: MainAxisAlignment.center,
-               //          children: <Widget>[
-               //            Image.asset('assets/images/pana.png', height: 5,width: 20,),
-               //
-               //            SizedBox(height: 120),
-               //          ]
-               //      ),
+                          Image.asset('assets/images/in.png'),
                     Text(
                       'Sign in',
                       style: TextStyle(
                         color: Colors.red,
-                        fontSize: 24,
+                        fontSize: 30,
                         fontWeight: FontWeight.bold
                       ),
                     ),
-                 
+
                //  ),
                 const SizedBox(
-                  height: 30,
+                  height: 10,
                 ),
-                const Text(
-                  'Email',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12),
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
+
                 TextFormField(
                   controller: emailController,
                   validator: (value) {
@@ -74,10 +59,13 @@ class _SignInScreenState extends State<SignInScreen> {
                     print(value);
                   },
                   style: const TextStyle(
-                    color: Colors.red,
+                    color: Colors.black,
                     fontSize: 16,
                   ),
                   decoration: InputDecoration(
+                    labelText:'email' ,
+                    labelStyle: TextStyle(color: Colors.grey),
+                    hintText:'email' ,
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: const BorderSide(
@@ -92,7 +80,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
                 const SizedBox(
-                  height: 23,
+                  height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -169,9 +157,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   keyboardType: TextInputType.visiblePassword,
                   maxLength: 8,
                 ),
-                const SizedBox(
-                  height: 3,
-                ),
+
                 Row(
                   children: [
                     Checkbox(
@@ -196,23 +182,27 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
 
                 Padding(
                   padding: const EdgeInsets.all(9.0),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red[700],
+                      backgroundColor: Colors.red,
                       padding: EdgeInsets.symmetric(vertical: 12.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
                     ),
+
+
                     onPressed: () {
-                      // Handle sign in action
+                      Navigator.pushNamed(context, 'SignUp');
                     },
+
+
+
                     child: Text(
-                      'Sign in',
+                      'Sign up',
                       style: TextStyle(
                         fontSize: 18.0,
                         color: Colors.white,
@@ -222,6 +212,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
                  Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                        Center(
                          child: Text(
@@ -238,7 +229,7 @@ class _SignInScreenState extends State<SignInScreen> {
                        ),
                      ],
                   ),
-                const SizedBox(height: 59),
+                const SizedBox(height: 20),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -266,32 +257,23 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 18),
-          Padding(
-          padding: const EdgeInsets.all(9.0),
-          child: Container(
-          decoration: BoxDecoration(
-          image: DecorationImage(
-          image: AssetImage('assets/images/img.png'),
-          fit: BoxFit.cover,
-          ),
-          borderRadius: BorderRadius.circular(15.0),
-          ),
-          child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: 12.0),
-          shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-          ),
-          ),
-          onPressed: () {
-          // Handle button action
-          },
-          child: Text('Click Me'), // Button text
-          ),
-          ),
-          ),
-            ],
+                SizedBox(height: 5,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/Facebook.png'),
+                    SizedBox(width:25 ,),
+                    InkWell(
+
+                        onTap: ()  async {
+                          await firebaseGoogle.signInWithGoogle().then((value) {
+                            Navigator.of(context).pushNamed('BaseScreen');
+                          },);
+                    },
+                        child: Image.asset('assets/images/Group.png')),
+                  ],
+                )
+           ]
     ),
     ),
       ),

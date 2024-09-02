@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding3 extends StatelessWidget {
@@ -6,80 +5,88 @@ class OnBoarding3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.red[50], // Light background color
-                borderRadius: BorderRadius.circular(20),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height: 8,
               ),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Image.asset('assets/images/Frame2.pngg', height: 50),
-                    SizedBox(height: 20),
-                  ]
+              Image.asset('assets/images/LOGO.png'),
+              SizedBox(height: 40),
+
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Align(alignment: Alignment.center,
+                        child: Image.asset('assets/images/cuate.png')),
+                  ),
+
+                ],
               ),
-            ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            "Test fresh delicious meals anytime",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.red[800],
-            ),
-          ),
-          SizedBox(height: 10),
-          Text(
-            "We provide well prepared meal at all hours of the day",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey[600],
-            ),
-          ),
-          SizedBox(height: 40),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red[700],
-                padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 100.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-              onPressed: () {
-                // Define action on button press
-              },
-              child: Text(
-                'Continue',
+              SizedBox(height: 20),
+              Text(
+                "Deliver to your home",
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
                 ),
               ),
-            ),
+              SizedBox(height: 10),
+              Text(
+                "Enjoy a fast and smooth delivery at your doorstep",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[600],
+                ),
+              ),
+
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('assets/images/Ellipse 1.png'),
+                  SizedBox(width: 4),
+                  Image.asset('assets/images/Ellipse 1.png'),
+                  SizedBox(width: 4),
+                  Image.asset('assets/images/Rectangle 1.png'),
+
+
+
+                ],),
+              SizedBox(height: 50,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red[700],
+                    padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 120.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('HomeScreen');
+                  },
+                  child: Text(
+                    'Get started ',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+             ]
           ),
-          SizedBox(height: 10),
-          TextButton(
-            onPressed: () {
-              // Define skip action
-            },
-            child: Text(
-              'Skip',
-              style: TextStyle(color: Colors.grey[600]),
-            ),
-          ),
-          SizedBox(height: 20),
-        ],
+        ),
       ),
     );
   }

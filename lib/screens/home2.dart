@@ -1,27 +1,53 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Home2 extends StatelessWidget {
+class Home2 extends StatefulWidget {
   const Home2({super.key});
 
+  @override
+  State<Home2> createState() => _Home2State();
+}
+
+class _Home2State extends State<Home2> {
+  int selectIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Select a meal type',
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
 
-        ),
+        title: Row(
+        children: [
+            Align(
+            alignment: Alignment.topLeft,
+            child: IconButton(
+                onPressed: () {
+                },
+                icon: const Icon(Icons.arrow_back_ios)),),
+        Text(
+        'Select a meal type',
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+
+    ),
+    ]),
+
         actions: [
-          Row(
-            children: [
-              Icon(Icons.notifications_none, color: Colors.black),
-              Icon(Icons.search),
-      ]
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                InkWell(child: Icon(Icons.notifications,size: 28),
+                  onTap: () {
+
+                  },),
+                InkWell(child: Icon(Icons.search,size: 28),
+                  onTap: () {
+
+                  },),
+
+              ],
+            ),
           )
-        ],
-      ),
+        ],),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -31,13 +57,23 @@ class Home2 extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  Image.asset('assets/images/img.png'),
+                  SizedBox(height: 13,),
+                  Image.asset('assets/images/main_dish.png', ),
+                  SizedBox(height: 13,),
+                  Image.asset('assets/images/FAST FOOD.png', height: 150,),
+                  SizedBox(height: 13,),
+                  Image.asset('assets/images/salad.png', height: 150,),
+                  SizedBox(height: 13,),
+                  Image.asset('assets/images/fruit.png', height: 150,),
+
                 ],
               ),
             ),
           ],
         ),
       ),
+
+
     );
   }
 }
